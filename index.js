@@ -63,7 +63,7 @@ export default function autoImport({ components, module, mapping, include, exclu
       }
       let ast;
       try {
-        if (preprocess && preprocess.length) {
+        if (preprocess && (preprocess.length || Object.keys(preprocess).length)) {
           let result = await svelte.preprocess(code, preprocess);
           code = result.code;
         }
