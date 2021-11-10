@@ -69,6 +69,7 @@ export default function autoImport({ components, module, mapping, include, exclu
         }
         ast = svelte.parse(code);
       } catch (e) {
+        console.error(`error parse ${filePath}: `, e)
         return null;
       }
 
